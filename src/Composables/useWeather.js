@@ -1,6 +1,6 @@
 import { ref } from 'vue'
-import { Lugar } from '@/models/Lugar'
-import { obtenerClimaActual } from '@/services/WeatherConexion'
+import { Lugar } from '../models/Lugar'
+import { obtenerClimaActual } from '../services/WeatherConexion'
 
 export function useWeather() {
   const lugares = ref([])

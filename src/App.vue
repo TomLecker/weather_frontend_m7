@@ -1,23 +1,31 @@
 <template>
-  <NavbarComponent />
 
-  <MainLayout>
-    <router-view />
-  </MainLayout>
+  <v-app>
 
-  <FooterComponent />
+    <NavbarComponent />
+
+    <v-main>
+      <MainLayout>
+        <router-view />
+      </MainLayout>
+    </v-main>
+
+    <FooterComponent />
+
+  </v-app>
+
 </template>
 
 <script>
-import NavbarComponent from "@/components/NavbarComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
-import MainLayout from "@/layout/MainLayout.vue";
+import NavbarComponent from "./components/NavbarComponent.vue";
+import FooterComponent from "./components/FooterComponent.vue";
+import MainLayout from "./layout/MainLayout.vue";
 
 export default {
   components: {
     NavbarComponent,
     FooterComponent,
-    MainLayout
-  }
+    MainLayout,
+  },
 };
 </script>

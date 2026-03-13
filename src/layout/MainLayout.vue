@@ -1,29 +1,43 @@
 <template>
-  <div class="container-fluid mt-4">
-    <div class="row">
 
-      <!-- MAIN DINÁMICO -->
-      <div class="col-12 col-md-9">
+  <v-container fluid class="mt-4">
+
+    <v-row>
+
+      <!-- CONTENIDO PRINCIPAL -->
+      <v-col
+        cols="12"
+        md="9"
+        
+      >
         <main>
           <slot />
         </main>
-      </div>
+      </v-col>
 
-      <!-- ASIDE GLOBAL -->
-      <div class="col-12 col-md-3">
+      <!-- ASIDE -->
+      <v-col
+        cols="12"
+        md="3"
+        class="d-flex justify-center align-center"
+      
+>
+      >
         <AsideGlobal />
-      </div>
+      </v-col>
 
-    </div>
-  </div>
+    </v-row>
+
+  </v-container>
+
 </template>
 
 <script>
-import AsideGlobal from "@/components/AsideGlobal.vue";
+import AsideGlobal from "../components/AsideGlobal.vue"
 
 export default {
   components: {
     AsideGlobal
   }
-};
+}
 </script>

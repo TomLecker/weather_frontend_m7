@@ -1,9 +1,9 @@
 import { ref } from "vue";
-import { obtenerPronostico } from "@/services/WeatherConexion";
+import { obtenerPronostico } from "../services/WeatherConexion";
 import {
   mapearPronosticoSemanal,
   alertaSemanal
-} from "@/Utils/pronostico";
+} from "../Utils/pronostico";
 
 export function usePronostico() {
   const pronostico = ref([]);

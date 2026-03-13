@@ -1,15 +1,28 @@
 <template>
 
-    <div
-          class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 contenido__column"
-        >
-          <main class="contenido__main">
-            <section class="info info--mod w-100">
+  <v-container>
+    <v-row justify="center">
+
+      <v-col
+        cols="12"
+        md="9"
+        lg="9"
+        xl="9"
+        class="contenido__column"
+      >
+
+        <main class="contenido__main">
+
+          <v-card class="info info--mod w-100">
+            <v-card-text>
+
               <h3>Acerca de esta pagina</h3>
+
               <p>
                 Estas tarjetas entregan informacion del dia actual, obtenida de
                 la API de openweathermap
               </p>
+
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
                 ab dicta explicabo quo hic voluptates odit nobis totam! Vitae
@@ -26,15 +39,21 @@
                 ipsum illum ex similique tempora sequi magni fugiat iste ipsa
                 distinctio cumque fuga et nam iure? Aliquam, ipsum.
               </p>
-            </section>
-          </main>
-        </div>
+
+            </v-card-text>
+          </v-card>
+
+        </main>
+
+      </v-col>
+
+    </v-row>
+  </v-container>
 
 </template>
 
 <script>
-    export default {
-        name: "AcercaDeComponent"
-    };
-
+export default {
+  name: "AcercaDeComponent"
+}
 </script>

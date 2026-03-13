@@ -1,9 +1,8 @@
-import { ref } from "vue";
-import { obtenerClimaActual } from "@/services/WeatherConexion";
+import { useWeatherStore } from "../stores/weatherStore"
 
 export function useClimaActual() {
-  const lugares = ref([]);
-  const loading = ref(false);
+
+  const weatherStore = useWeatherStore()
 
   const listaCiudades = [
     "Madrid",
@@ -16,35 +15,20 @@ export function useClimaActual() {
     "Moscu",
     "Caracas",
     "Bogota"
-  ];
+  ]
 
   async function cargarClima() {
-    loading.value = true;
-    lugares.value = [];
 
     for (let i = 0; i < listaCiudades.length; i++) {
-      try {
-        const data = await obtenerClimaActual(listaCiudades[i]);
-
-        lugares.value.push({
-          id: i,
-          nombre: listaCiudades[i],
-          tempActual: Math.round(data.main.temp),
-          estadoActual: data.weather[0].description,
-          icono: data.weather[0].icon
-        });
-
-      } catch (error) {
-        console.error(error);
-      }
+      await weatherStore.getClima(listaCiudades[i])
     }
 
-    loading.value = false;
   }
 
   return {
-    lugares,
-    loading,
+    climaActual: weatherStore.climaActual,
+    loading: weatherStore.loading,
     cargarClima
-  };
+  }
+
 }

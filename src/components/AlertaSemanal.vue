@@ -1,7 +1,12 @@
 <template>
-  <div v-if="alerta" class="alert alert-warning text-center mt-3">
+  <v-alert
+    v-if="alerta"
+    type="warning"
+    class="alert text-center mt-3"
+    variant="tonal"
+  >
     {{ alerta.mensaje }}
-  </div>
+  </v-alert>
 </template>
 
 <script>

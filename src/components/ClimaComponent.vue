@@ -4,66 +4,50 @@
     <h3 class="mb-4">Climas de hoy</h3>
 
     <!-- 🔎 BÚSQUEDA -->
-    <input
-      type="text"
+    <v-text-field
       v-model="busqueda"
-      placeholder="Buscar ciudad..."
-      class="form-control mb-4"
+      label="Buscar ciudad..."
+      variant="outlined"
+      density="comfortable"
+      class="mb-4 form-control"
+      clearable
     />
+
+    <!-- Skeleton mientras carga -->
+    <v-row v-if="loading" class="row g-4">
+      <v-col
+        v-for="n in 8"
+        :key="n"
+        cols="12"
+        md="6"
+        lg="4"
+        xl="3"
+      >
+        <v-skeleton-loader type="card" />
+      </v-col>
+    </v-row>
 
     <!-- Mensaje si no encuentra -->
     <p v-if="!lugaresFiltrados.length && !loading">
       No se encontró ninguna ciudad.
     </p>
 
-    <div v-if="loading" class="text-center">
-      Cargando climas...
-    </div>
-
     <!-- LISTADO -->
-    <div class=" row g-4">
-      <div
+    <v-row v-if="!loading" class="row g-4">
+
+      <v-col
         v-for="lugar in lugaresFiltrados"
         :key="lugar.id"
-        class="card card--main col-12 col-md-6 col-lg-4 col-xl-3"
+        cols="12"
+        md="6"
+        lg="4"
+        xl="3"
+        class="card card--main"
       >
         <LugarCard :lugar="lugar" />
-      </div>
-    </div>
+      </v-col>
+
+    </v-row>
 
   </section>
 </template>
-
-<script>
-import { ref, computed, onMounted } from "vue";
-import { useClimaActual } from "@/Composables/useClimaActual";
-import LugarCard from "./LugarCard.vue";
-
-export default {
-  components: { LugarCard },
-
-  setup() {
-    const { lugares, loading, cargarClima } = useClimaActual();
-
-    const busqueda = ref("");
-
-    const lugaresFiltrados = computed(() =>
-      lugares.value.filter(lugar =>
-        lugar.nombre
-          .toLowerCase()
-          .includes(busqueda.value.toLowerCase())
-      )
-    );
-
-    onMounted(() => {
-      cargarClima();
-    });
-
-    return {
-      busqueda,
-      lugaresFiltrados,
-      loading
-    };
-  }
-};
-</script>

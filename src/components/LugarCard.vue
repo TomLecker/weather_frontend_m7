@@ -1,6 +1,7 @@
 <template>
-  <div class="card h-100 text-center shadow-sm">
-    <div class="card-body">
+  <v-card class="card h-100 text-center shadow-sm">
+    <v-card-text class="card-body">
+
       <h5 class="card-title">{{ lugar.nombre }}</h5>
 
       <img :src="iconUrl" :alt="lugar.estadoActual" />
@@ -13,40 +14,33 @@
         🌡️ {{ lugar.tempActual }}°C
       </p>
 
-      <button
+      <v-btn
         class="btn btn-primary"
+        color="primary"
         @click="verDetalles"
       >
         Ver detalle
-      </button>
-    </div>
-  </div>
+      </v-btn>
+
+    </v-card-text>
+  </v-card>
 </template>
 
-<script>
-import { useRouter } from "vue-router";
-import { computed } from "vue";
+<script setup>
+import { useRouter } from "vue-router"
+import { computed } from "vue"
 
-export default {
-  props: {
-    lugar: Object
-  },
+const { lugar } = defineProps({
+  lugar: Object
+})
 
-  setup(props) {
-    const router = useRouter();
+const router = useRouter()
 
-    const iconUrl = computed(() =>
-      `https://openweathermap.org/img/wn/${props.lugar.icono}@2x.png`
-    );
+const iconUrl = computed(() =>
+  `https://openweathermap.org/img/wn/${lugar.icono}@2x.png`
+)
 
-    function verDetalles() {
-      router.push(`/lugar/${props.lugar.nombre}`);
-    }
-
-    return {
-      iconUrl,
-      verDetalles
-    };
-  }
-};
+function verDetalles() {
+  router.push(`/lugar/${lugar.nombre}`)
+}
 </script>

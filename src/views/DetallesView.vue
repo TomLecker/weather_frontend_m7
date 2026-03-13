@@ -1,47 +1,27 @@
 <template>
-  <div class="container mt-4">
+  <v-container class="container mt-4">
     <h3>Pronóstico para {{ ciudad }}</h3>
-
     <DetallesComponent
-      :pronostico="pronostico"
-      :alerta="alerta"
-      :loading="loading"
-      :error="error"
+      :pronostico="weatherStore.pronostico"
+      :alerta="weatherStore.alerta"
+      :loading="weatherStore.loading"
+      :error="weatherStore.error"
     />
-  </div>
+  </v-container>
 </template>
 
-<script>
-import { onMounted } from "vue";
-import { useRoute } from "vue-router";
-import { usePronostico } from "@/Composables/usePronostico";
-import DetallesComponent from "@/components/DetallesComponent.vue";
+<script setup>
+import { onMounted } from "vue"
+import { useRoute } from "vue-router"
+import { useWeatherStore } from "../stores/weatherStore"
+import DetallesComponent from "../components/DetallesComponent.vue"
 
-export default {
-  components: { DetallesComponent },
-  setup() {
-    const route = useRoute();
-    const ciudad = route.params.ciudad || "Santiago";
+const route = useRoute()
+const weatherStore = useWeatherStore()
 
-    const {
-      pronostico,
-      alerta,
-      loading,
-      error,
-      cargarPronostico
-    } = usePronostico();
+const ciudad = route.params.ciudad
 
-    onMounted(() => {
-      cargarPronostico(ciudad);
-    });
-
-    return {
-      ciudad,
-      pronostico,
-      alerta,
-      loading,
-      error
-    };
-  }
-};
+onMounted(() => {
+  weatherStore.cargarDetalles(ciudad)
+})
 </script>

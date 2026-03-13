@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import AcercaDeComponent from '@/components/AcercaDeComponent.vue';
+import AcercaDeComponent from '../components/AcercaDeComponent.vue';
 
 export default {
   components: {

@@ -2,7 +2,9 @@
 @use "../mixins/mixins";
 
 .aside {
-  height: 100%;
+  min-height: 40%;
+  max-height: 80%;
+
 
   &__image {
     max-height: 20%;
