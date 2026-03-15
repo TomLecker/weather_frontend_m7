@@ -14,7 +14,11 @@ export const useWeatherStore = defineStore("weather", {
     error: null,
   }),
 
+
   actions: {
+
+
+    
     async cargarClimaCiudades() {
       const listaCiudades = [
         "Madrid",
@@ -27,6 +31,8 @@ export const useWeatherStore = defineStore("weather", {
         "Moscu",
         "Caracas",
         "Bogota",
+        "New York",
+        "Paris"
       ];
 
       this.loading = true;

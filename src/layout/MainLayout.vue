@@ -1,6 +1,6 @@
 <template>
 
-  <v-container fluid class="mt-4">
+  <v-container fluid class="contenedor__principal">
 
     <v-row>
 
@@ -8,7 +8,6 @@
       <v-col
         cols="12"
         md="9"
-        
       >
         <main>
           <slot />
@@ -19,10 +18,10 @@
       <v-col
         cols="12"
         md="3"
-        class="d-flex justify-center align-center"
-      
+        class=" align-center"
+    
 >
-      >
+      
         <AsideGlobal />
       </v-col>
 

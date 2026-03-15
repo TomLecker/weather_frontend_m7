@@ -1,7 +1,5 @@
 <template>
-
   <v-app>
-
     <NavbarComponent />
 
     <v-main>
@@ -11,9 +9,7 @@
     </v-main>
 
     <FooterComponent />
-
   </v-app>
-
 </template>
 
 <script>

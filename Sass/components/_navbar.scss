@@ -3,12 +3,29 @@
   &__container {
   }
 
+  &__btn{
+    margin-left: 5px;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    &:hover{
+      color: purple;
+    }
+  }
+
   &__brand {
     font-weight: bold;
   }
 
   &__toggler {
     border-color: #007bff;
+  }
+
+  &__text {
+    margin-left: 5px;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    right: 50px;
   }
 
   &__collapse {

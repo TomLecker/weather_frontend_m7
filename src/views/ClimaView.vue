@@ -15,13 +15,13 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue"
-import { useWeatherStore } from "../stores/weatherStore"
-import LugarCard from "../components/LugarCard.vue"
+import { onMounted } from "vue";
+import { useWeatherStore } from "../stores/weatherStore";
+import LugarCard from "../components/LugarCard.vue";
 
-const weatherStore = useWeatherStore()
+const weatherStore = useWeatherStore();
 
 onMounted(() => {
-  weatherStore.cargarClimaCiudades()
-})
+  weatherStore.cargarClimaCiudades();
+});
 </script>

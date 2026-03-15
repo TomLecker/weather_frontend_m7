@@ -1,9 +1,14 @@
 @use "../variables/variables";
 @use "../mixins/mixins";
 
+.contenedor{
+    &__principal{
+        margin-top: 7rem;
+    }
+}
+
 .aside {
-  min-height: 40%;
-  max-height: 80%;
+  max-height: 100%;
 
 
   &__image {
@@ -63,6 +68,29 @@
 
 }
 
+.dashboard{
+  &__title{
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle{
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      
+  }
+
+  &__selector{
+    width: 25%;
+    border-radius: 5px;
+    border: solid 2px black;
+  }
+
+}
+
 /*
 .contenido{
 
@@ -91,6 +119,7 @@
   &__fila {
     padding: 1rem;
     text-align: left;
+    display: contents;
   }
 
   &__text{

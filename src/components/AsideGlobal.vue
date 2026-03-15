@@ -1,36 +1,62 @@
-<template>
-  <v-card class="aside aside--mod shadow-sm p-3 rounded">
+<script setup>
+import { useAuthStore } from "../stores/authStore"
+import { useRouter } from "vue-router"
 
-<img
-  class="img-fluid aside__image rounded mb-3"
-  :src="imagen"
-  alt="Ciudad"
-/>
+const auth = useAuthStore()
+const router = useRouter()
 
-    <v-card-text>
-
-      <h5 class="aside__title">Información relacionada</h5>
-
-      <p class="aside__text">
-        Esta aplicación obtiene datos desde OpenWeatherMap
-        y muestra información actual y semanal.
-      </p>
-
-    </v-card-text>
-
-  </v-card>
-</template>
-
-<script>
-import imagen from "../assets/santiago.jpg"
-
-export default {
-  name: "AsideGlobal",
-  data() {
-    return {
-      imagen
-    }
-  }
+function irACiudad(ciudad){
+  router.push(`/lugar/${ciudad}`)
 }
-
 </script>
+
+<template>
+
+<v-card class=" ">
+
+<v-card-title class="aside aside--mod">
+⭐ Tus ciudades favoritas
+</v-card-title>
+
+
+
+<!-- Usuario no logueado -->
+
+<div v-if="!auth.user">
+Inicia sesión para guardar favoritos
+</div>
+
+<!-- Esperando datos de Firebase -->
+
+<div v-else-if="!auth.userData">
+Cargando favoritos...
+</div>
+
+<!-- No hay favoritos -->
+
+<div v-else-if="auth.userData.favoritos.length === 0">
+No tienes favoritos aún
+</div>
+
+<!-- Lista de favoritos -->
+
+<v-list class="aside--mod" v-else>
+
+<v-list-item
+v-for="ciudad in auth.userData.favoritos"
+:key="ciudad"
+@click="irACiudad(ciudad)"
+style="cursor:pointer"
+>
+
+<v-list-item-title>
+{{ ciudad }}
+</v-list-item-title>
+
+</v-list-item>
+
+</v-list>
+
+</v-card>
+
+</template>

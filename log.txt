@@ -1,0 +1,17 @@
+commit cbfbc27d8c4373399ae5b244d21f940195154e15
+Author: Francisco Lopez <francisco.lg1992@gmail.com>
+Date:   Fri Mar 13 19:51:16 2026 -0300
+
+    Proyecto migrado a vite, uso de vuetify y pinia , creacion e implementacion de  weatherStore
+
+commit 22a3b88e79152d0bd6888c5335ce49152fde47de
+Author: Francisco Lopez <francisco.lg1992@gmail.com>
+Date:   Sun Feb 22 18:37:42 2026 -0300
+
+    Migración a SPA con Vue Router y ruta dinámica, pagina actualmente funcional
+
+commit daff4b0b033e4dd24c0b4662db7819bdd6a6bc2b
+Author: Francisco Lopez <francisco.lg1992@gmail.com>
+Date:   Fri Feb 20 17:08:37 2026 -0300
+
+    init

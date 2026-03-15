@@ -3,24 +3,33 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-/* Vuetify */
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
 import { vuetify } from './plugins/vuetify'
 
-/* estilos */
 import '../Sass/main.scss'
 
-/* Bootstrap (si aún lo usas) */
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
-const pinia = createPinia()
+import { useAuthStore } from "./stores/authStore"
 
 const app = createApp(App)
+const pinia = createPinia()
 
 app.use(pinia)
-app.use(router)
 app.use(vuetify)
 
-app.mount('#app')
+async function iniciarApp() {
+
+  const auth = useAuthStore()
+
+  // esperar a que Firebase detecte sesión
+  await auth.initAuth()
+
+  app.use(router)
+
+  app.mount('#app')
+}
+
+iniciarApp()
