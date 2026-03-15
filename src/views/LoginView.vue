@@ -63,6 +63,12 @@ const login = async () => {
     router.push("/dashboard")
   }
 
+  const ok = await auth.login(email.value, password.value)
+
+  if (ok) {
+    router.push("/")   // redirección al home
+  }
+
 }
 
 </script>

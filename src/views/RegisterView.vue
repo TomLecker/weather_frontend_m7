@@ -27,6 +27,12 @@ const register = async () => {
     router.push("/dashboard")
   }
 
+  const ok = await auth.register(email.value, password.value)
+
+  if (ok) {
+    router.push("/")   // 👈 redirige al home
+  }
+
 }
 
 </script>
