@@ -23,13 +23,16 @@ Se crea un documento en Firestore dentro de la colección:
 users/{uid}
 
 Con la siguiente estructura:
-
+HEAD
 {
   email: "...",
   favoritos: [],
   preferenciaTemp: "C"
 }
 Login
+
+{ email: "...", favoritos: [], preferenciaTemp: "C" } Login
+ 4aecb79 (removido archivo .env del repositorio)
 
 El login permite:
 
@@ -57,11 +60,15 @@ El estado del usuario se gestiona en authStore.js.
 
 Contiene:
 
+<<<<<<< HEAD
 user
 userData
 loading
 loadingUser
 initAuth()
+=======
+user userData loading loadingUser initAuth()
+>>>>>>> 4aecb79 (removido archivo .env del repositorio)
 
 Se implementó initAuth() para:
 
@@ -117,8 +124,12 @@ De esta forma las tarjetas del dashboard muestran exactamente los mismos datos q
 
 Se implementó un selector para elegir:
 
+<<<<<<< HEAD
 °C
 °F
+=======
+°C °F
+>>>>>>> 4aecb79 (removido archivo .env del repositorio)
 
 El valor se guarda en Firestore dentro de:
 
@@ -134,6 +145,7 @@ Esto permite personalizar la visualización de temperatura según el usuario.
 
 Se implementaron rutas protegidas con Vue Router.
 
+<<<<<<< HEAD
 Rutas públicas
 /
 login
@@ -153,6 +165,17 @@ Si el usuario ya está logueado:
 
 → redirección al Home
 🚀 Inicialización segura de la sesión
+=======
+Rutas públicas / login register acerca Ruta protegida /dashboard
+
+Si un usuario no autenticado intenta acceder a /dashboard:
+
+→ redirección a /login Rutas solo para invitados /login /register
+
+Si el usuario ya está logueado:
+
+→ redirección al Home 🚀 Inicialización segura de la sesión
+>>>>>>> 4aecb79 (removido archivo .env del repositorio)
 
 Para evitar problemas de sincronización entre Firebase y el router se implementó:
 
@@ -168,6 +191,7 @@ habilita el router solo cuando termina
 
 Esto evita errores de sesión al recargar la página.
 
+<<<<<<< HEAD
 
 Estado actual del proyecto
 
@@ -180,3 +204,8 @@ Estado actual del proyecto
 ✔ Preferencias de temperatura
 ✔ Rutas protegidas
 ✔ Componentes reutilizables
+=======
+Estado actual del proyecto
+
+✔ Consulta de clima desde API ✔ Sistema de autenticación ✔ Registro de usuarios ✔ Gestión de sesión ✔ Favoritos guardados en base de datos ✔ Dashboard personalizado ✔ Preferencias de temperatura ✔ Rutas protegidas ✔ Componentes reutilizables
+>>>>>>> 4aecb79 (removido archivo .env del repositorio)

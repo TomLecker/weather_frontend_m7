@@ -7,12 +7,12 @@ import { getFirestore } from "firebase/firestore"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCQ19H98v2KaDgKQQShin634KKr2qjPFOQ",
-  authDomain: "weatherapp-firebase-pinia.firebaseapp.com",
-  projectId: "weatherapp-firebase-pinia",
-  storageBucket: "weatherapp-firebase-pinia.firebasestorage.app",
-  messagingSenderId: "33802967500",
-  appId: "1:33802967500:web:43a02c5b1c955c4f00e569"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
