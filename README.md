@@ -23,16 +23,6 @@ Se crea un documento en Firestore dentro de la colección:
 users/{uid}
 
 Con la siguiente estructura:
-HEAD
-{
-  email: "...",
-  favoritos: [],
-  preferenciaTemp: "C"
-}
-Login
-
-{ email: "...", favoritos: [], preferenciaTemp: "C" } Login
- 4aecb79 (removido archivo .env del repositorio)
 
 El login permite:
 
@@ -61,6 +51,7 @@ El estado del usuario se gestiona en authStore.js.
 Contiene:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 user
 userData
 loading
@@ -69,6 +60,9 @@ initAuth()
 =======
 user userData loading loadingUser initAuth()
 >>>>>>> 4aecb79 (removido archivo .env del repositorio)
+=======
+user userData loading loadingUser initAuth()
+>>>>>>> a2a23cf (fix: configuración para deploy en GitHub Pages)
 
 Se implementó initAuth() para:
 
@@ -125,11 +119,15 @@ De esta forma las tarjetas del dashboard muestran exactamente los mismos datos q
 Se implementó un selector para elegir:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 °C
 °F
 =======
 °C °F
 >>>>>>> 4aecb79 (removido archivo .env del repositorio)
+=======
+°C °F
+>>>>>>> a2a23cf (fix: configuración para deploy en GitHub Pages)
 
 El valor se guarda en Firestore dentro de:
 
@@ -145,6 +143,7 @@ Esto permite personalizar la visualización de temperatura según el usuario.
 
 Se implementaron rutas protegidas con Vue Router.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Rutas públicas
 /
@@ -166,6 +165,8 @@ Si el usuario ya está logueado:
 → redirección al Home
 🚀 Inicialización segura de la sesión
 =======
+=======
+>>>>>>> a2a23cf (fix: configuración para deploy en GitHub Pages)
 Rutas públicas / login register acerca Ruta protegida /dashboard
 
 Si un usuario no autenticado intenta acceder a /dashboard:
@@ -175,7 +176,10 @@ Si un usuario no autenticado intenta acceder a /dashboard:
 Si el usuario ya está logueado:
 
 → redirección al Home 🚀 Inicialización segura de la sesión
+<<<<<<< HEAD
 >>>>>>> 4aecb79 (removido archivo .env del repositorio)
+=======
+>>>>>>> a2a23cf (fix: configuración para deploy en GitHub Pages)
 
 Para evitar problemas de sincronización entre Firebase y el router se implementó:
 
@@ -191,6 +195,7 @@ habilita el router solo cuando termina
 
 Esto evita errores de sesión al recargar la página.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 Estado actual del proyecto
@@ -209,3 +214,8 @@ Estado actual del proyecto
 
 ✔ Consulta de clima desde API ✔ Sistema de autenticación ✔ Registro de usuarios ✔ Gestión de sesión ✔ Favoritos guardados en base de datos ✔ Dashboard personalizado ✔ Preferencias de temperatura ✔ Rutas protegidas ✔ Componentes reutilizables
 >>>>>>> 4aecb79 (removido archivo .env del repositorio)
+=======
+Estado actual del proyecto
+
+✔ Consulta de clima desde API ✔ Sistema de autenticación ✔ Registro de usuarios ✔ Gestión de sesión ✔ Favoritos guardados en base de datos ✔ Dashboard personalizado ✔ Preferencias de temperatura ✔ Rutas protegidas ✔ Componentes reutilizables
+>>>>>>> a2a23cf (fix: configuración para deploy en GitHub Pages)
